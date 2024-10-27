@@ -1,0 +1,133 @@
+.auth{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 30px;
+    background-color: #f3f3f3;
+
+}
+
+.h1-auth{
+    font-size: 35px;
+    color: #000;
+    background-color: rgba(134, 134, 134, 0);
+    margin: 10px 0 30px 0;
+}
+
+.form{ 
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 30px 30px 30px 30px;
+
+    background-color: rgba(39, 39, 39, 0.568);
+    background-color: rgba(255, 255, 255);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(134, 134, 134, 0.5);
+    border-radius: 16px;
+}
+
+.input__div{
+    margin: 20px 0 0 0;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(134, 134, 134, 0.3);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.input{
+    color: #000;
+    font-size: 16px;
+    width: 100%;
+}
+.input::placeholder{
+    color: #757575 ;
+
+}
+
+.buttonLogin{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 16px;
+    width: 100%;
+    color: #fff;
+    font-weight: 500;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+    transition-duration: 0.3s;
+    background-color: #5572f3;
+}
+
+.phonePNG{
+    width: 20px;
+    margin: 0 10px;
+}
+
+.link__auth{
+    background-color: rgba(134, 134, 134, 0);
+    color: #757575 ;
+    margin-top: 20px;
+}
+
+
+@media (max-width: 440px) {
+    .form{ 
+        margin-top: 130px;
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        padding: 30px 30px 30px 30px;
+    
+        background-color: rgba(39, 39, 39, 0.568);
+        background-color: rgba(255, 255, 255);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(134, 134, 134, 0.5);
+        border-radius: 16px;
+    }
+}
+
+@media (max-width: 350px) {
+    .form{ 
+        margin-top: 130px;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        padding: 30px 30px 30px 30px;
+    
+        background-color: rgba(39, 39, 39, 0.568);
+        background-color: rgba(255, 255, 255);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(134, 134, 134, 0.5);
+        border-radius: 16px;
+    }
+}
+
+
+.checkbox__div {
+    align-items: center;
+    border: 1px solid #8686864d;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 0;
+    padding: 15px;
+    width: 100%;
+}
+.checkbox__text {
+    margin-left: 10px;
+}

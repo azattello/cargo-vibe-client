@@ -1,0 +1,14 @@
+.notiofication{
+    width: 100%;
+    height: calc(100% - 72px - 62px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    background-color: #fff;
+}
+.gif{
+    width: 100px;
+}

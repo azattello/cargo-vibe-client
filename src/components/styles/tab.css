@@ -1,0 +1,67 @@
+.Tab{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    /* padding: 15px 0; */
+    padding: 0px 0;
+
+    background-color: #fff;
+    /* border-top: 1px solid rgba(134, 134, 134, 0.7); */
+    border-top: 1px solid rgba(134, 134, 134, 0.2);
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 10;
+}
+.tabbutton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0);
+    margin: 12px 0 0 0;
+
+}
+
+
+.tabbutton p{
+    background-color: rgba(255, 255, 255, 0);
+    color: #000;
+    margin: 5px 0 0  0;
+    margin: 5px 0 15px  0;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.activeTabText{
+    color: #01DA01;
+}
+
+.noactiveTabText{
+    color: #808080;
+}
+
+.icons-svg{
+    fill: #01DA01;
+
+    stroke: #01DA01;
+    color: #01DA01;
+    width: 25px;
+
+}
+
+
+
+
+.ionicon {
+    fill: #01DA01;
+  }
+
+
+
+  @media only screen and (min-width: 1024px) {
+    .Tab {
+      display: none;
+    }
+  }
