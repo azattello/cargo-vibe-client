@@ -10,8 +10,21 @@ const formatDate = (dateString) => {
     const year = date.getFullYear();
     const month = (date.getMonth() + 1).toString().padStart(2, '0');
     const day = date.getDate().toString().padStart(2, '0');
-    return `${year}-${month}-${day}`;
+    return `${day}-${month}-${year}`;
 };
+
+const formatDate2 = (dateString) => {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    const hours = date.getHours().toString().padStart(2, '0');
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+    const seconds = date.getSeconds().toString().padStart(2, '0');
+
+    return `${day}-${month}-${year} ${hours}:${minutes}:${seconds}`;
+};
+
 
 const TrackList = () => {
     const [tracks, setTracks] = useState([]);
@@ -359,6 +372,7 @@ const TrackList = () => {
                                 <thead>
                                     <tr>
                                     <th>Пользователь</th>
+                                    <th>Номер телефона</th>
                                     <th>Трек-код</th>
                                     <th>Дата создания</th>
                                     <th>Описание</th>
@@ -368,9 +382,10 @@ const TrackList = () => {
                                 <tbody>
                                     {bookmarksWithoutStatus.map((bookmark, index) => (
                                     <tr key={index}>
-                                        <td>{bookmark.user ? `${bookmark.user.name} ${bookmark.user.surname} (${bookmark.user.phone})` : 'Неизвестно'}</td>
+                                        <td>{bookmark.user ? `${bookmark.user.name} ${bookmark.user.surname}` : 'Неизвестно'}</td>
+                                        <td>{bookmark.user.phone}</td>
                                         <td>{bookmark.trackNumber}</td>
-                                        <td>{formatDate(bookmark.createdAt)}</td>
+                                        <td>{formatDate2(bookmark.createdAt)}</td>
                                         <td>{bookmark.description}</td>
                                     </tr>
                                     ))}

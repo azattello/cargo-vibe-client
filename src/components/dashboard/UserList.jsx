@@ -11,7 +11,7 @@ const formatDate = (dateString) => {
   const year = date.getFullYear();
   const month = (date.getMonth() + 1).toString().padStart(2, '0');
   const day = date.getDate().toString().padStart(2, '0');
-  return `${year}-${month}-${day}`;
+  return `${day}.${month}.${year}`;
 };
 
 const UserList = () => {
@@ -353,7 +353,7 @@ const UserList = () => {
         <table className="table">
           <thead>
             <tr>
-              <th>Код</th>
+              <th>№</th>
               <th>Имя</th>
               <th>Фамилия</th>
               <th>Номер</th>
@@ -362,7 +362,7 @@ const UserList = () => {
               <th>Пароль</th>
               <th>В пути</th>
               <th>В архиве</th>
-              <th>Общая кол-во</th>
+              <th>Общее кол-во</th>
               <th>Роль</th>
               <th>Тариф</th>
               <th>Статус счета</th>
@@ -385,14 +385,16 @@ const UserList = () => {
                 <td>{user.role}</td>
                 <td>{user.personalRate ? `${user.personalRate}₸` : 'общий'}</td>
                 <td>
-                  {user.invoices.length === 0 ? (
-                    <span className="custom-invoice-status custom-invoice-no-invoices">Нет счетов</span>
-                  ) : user.invoices.some(invoice => invoice.status === 'pending' && invoice.totalAmount > 0) ? ( // Добавлен чек на totalAmount > 0
-                    <span className="custom-invoice-status custom-invoice-pending" onClick={() => openInvoiceModal(user)}>Неоплачено</span>
-                  ) : (
-                    <span className="custom-invoice-status custom-invoice-paid" onClick={() => openInvoiceModal(user)}>Оплачено</span>
-                  )}
-                </td>
+                    {(!user.invoices || user.invoices.length === 0) ? (
+                      <span className="custom-invoice-status custom-invoice-no-invoices">Нет счетов</span>
+                    ) : user.invoices.some(invoice => invoice.status === 'pending' && invoice.totalAmount > 0) ? (
+                      <span className="custom-invoice-status custom-invoice-pending" onClick={() => openInvoiceModal(user)}>Неоплачено</span>
+                    ) : user.invoices.some(invoice => invoice.status === 'paid') ? (
+                      <span className="custom-invoice-status custom-invoice-paid" onClick={() => openInvoiceModal(user)}>Оплачено</span>
+                    ) : (
+                      <span className="custom-invoice-status custom-invoice-no-invoices">Нет счетов</span>
+                    )}
+                  </td>
 
                 <td>
                   <button className="edit-btn" onClick={() => handleEditClick(user)}>Изменить</button>

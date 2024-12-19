@@ -1,3 +1,6 @@
+body {
+    --bg-color: #FEF0D5 ; 
+}
 .profile{
     display: flex;
     flex-direction: column;
@@ -14,6 +17,8 @@
     padding: 20px 30px 40px 30px;
 
     background-color: #F3F4F7 ;
+    background-color: var(--bg-color);
+
 
 }
 .profile__img-wrapper {
